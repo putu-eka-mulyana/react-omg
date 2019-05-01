@@ -1,33 +1,57 @@
-.App {
-  text-align: center;
+:root{
+  --biru :#11cbd7;
+  --white:#f0fff3;
+  --red:#f03861;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.img_about{
+    background: url("https://res-staging.cloudinary.com/omg-helo/image/upload/v1556082332/trand_t1prbm.jpg") center/cover fixed no-repeat;
+    width: 100%;
+    height: 350px;
+    -webkit-clip-path: polygon(75% 0%, 89% 56%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
+    clip-path: polygon(75% 0%, 89% 56%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.jumbo-edit{
+  height: 525px;
+  opacity: 0.7;
+  background: url("https://res-staging.cloudinary.com/omg-helo/image/upload/v1556191189/Maney_r9e20n.png") center/cover no-repeat;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 600px) {
+  .kotak_jumbo{
+    margin-top: 112px;
   }
-  to {
-    transform: rotate(360deg);
+  .b_bergabung{
+    position: relative;
+    top: 95px;
   }
+}
+h2.about-title {
+  border-bottom: 2px red solid;
+}
+.fitur{
+  list-style: none;
+  font-size: 30px;
+}
+.fitur li i{
+  color: var(--red);
+  font-size: 49px;
+}
+.login_bg{
+  background: url("https://res-staging.cloudinary.com/omg-helo/image/upload/v1556448854/login_yclx40.jpg")center/cover no-repeat;
+  height: 470px;
+}
+.login_bg .icon_add i,
+.icon_add i{
+  background-color: #ffffff;
+    font-size: 119px;
+    border-radius: 70%;
+    color: #dc3b45;
+    margin-top: 90px;
+}
+.red-text{
+ color: #dc3b45;
+}
+.user_login i{
+  font-size: 114px;
+  color:#ffffff;
+  padding-top: 40px;
 }
