@@ -1,3 +1,8 @@
+html,body,.App{
+	height: 100%;
+  margin: 0px;
+}
+
 :root{
   --biru :#11cbd7;
   --white:#f0fff3;
@@ -232,4 +237,24 @@ height: 500px;
 		margin-left: 0;
 	}
 
+}
+.bg-login{
+	height: 100%;
+	background-image: linear-gradient(to right top, #051637, #11305a, #184c80, #1a6ba7, #0e8ccf);
+}
+.card-auth {
+	box-shadow: 1px 11px 70px -20px rgba(0, 0, 0, 0.70);
+}
+.btn-block {
+	border-radius: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border-color: #1d82ff;
+	background: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+	background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+	background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+	box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+	-webkit-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+	-moz-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+ 
 }

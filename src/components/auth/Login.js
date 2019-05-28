@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 class Login extends Component {
     constructor() {
@@ -44,66 +43,61 @@ class Login extends Component {
     render() {
         const { errors } = this.state;
         return (
-            <Container>
-                <Row style={{ marginTop: "4rem" }} >
-                    <Col sm={6} className="login_bg">
-                        <div className="icon_add text-center"><i className="fa fa-user-plus"></i></div>
-                        <div className="text-center" style={{ marginTop: "2rem" }} >
-                            <Link to="/register" className="btn btn-danger">SIGN UP</Link>
-                        </div>
-                    </Col>
-                    <Col sm={6} className="card" >
-                        <Link to="/" className="btn btn-light">
-                            <i class="fa fa-arrow-left"></i>  Back to home
-                        </Link>
-                        <Card style={{ backgroundColor: "#dae1e7", height: "100%" }}>
-                            <div className="text-center user_login">
-                                <i class="fa fa-user"></i>
-                            </div>
-                            <form noValidate onSubmit={this.onSubmit}>
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text" ><i className="fa fa-envelope-o"></i></span>
-                                    </div>
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.email}
-                                        id="email"
-                                        type="email"
-                                        className="form-control"
-                                        placeholder="Username"
-                                    />
-
-                                </div>
-                                <span className="red-text">
-                                    {errors.email}
-                                    {errors.emailnotfound}
-                                </span>
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text"><i class="fa fa-key"></i></span>
-                                    </div>
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.password}
-                                        id="password"
-                                        type="password"
-                                        className="form-control"
-                                        placeholder="password"
-                                    />
-                                </div>
-                                <span className="red-text">
-                                    {errors.password}
-                                    {errors.passwordincorrect}
-                                </span>
-                                <div className="text-center">
-                                    <Button type="submit" variant="light">Login</Button>
-                                </div>
-                            </form>
-                        </Card>
+            <div className="bg-login">
+            <Container className="py-5">
+                <Row>
+                    <Col lg={12} md={12} sm={12}>
+                        <Row>
+                            <Col lg={5} md={7} sm={7} className="mx-auto">
+                                <Card rounded-1 className="card-auth">
+                                    <Card.Header>
+                                        <h4 className="text-center">FORM LOGIN</h4>
+                                    </Card.Header>
+                                    <Card.Body>
+                                    <form noValidate onSubmit={this.onSubmit}>
+                                        <div className="form-group mb-3">
+                                            <label>E-mail</label>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.email}
+                                                id="email"
+                                                type="email"
+                                                className="form-control"
+                                                placeholder="E-mail"
+                                            />
+                                        </div>
+                                        <span className="red-text">
+                                            {errors.email}
+                                            {errors.emailnotfound}
+                                        </span>
+                                        <div className="form-group mb-3">
+                                            <label>password</label>
+                                            <input
+                                                onChange={this.onChange}
+                                                value={this.state.password}
+                                                id="password"
+                                                type="password"
+                                                className="form-control"
+                                                placeholder="password"
+                                            />
+                                        </div>
+                                        <span className="red-text">
+                                            {errors.password}
+                                            {errors.passwordincorrect}
+                                        </span>
+                                        <div className="text-center">
+                                            <Button type="submit" className="btn btn-success btn-lg btn-block">Login</Button>
+                                        </div>
+                                        <div className="py-3">Dont have an occount ?  <Link to="/register">SIGN UP</Link></div>
+                                    </form>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>
+            </div>
         )
     }
 }
