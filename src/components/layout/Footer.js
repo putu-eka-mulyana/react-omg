@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
-import { Navbar, Nav} from 'react-bootstrap';
 class Footer extends Component {
 	render() {
 		return (
@@ -30,9 +27,9 @@ class Footer extends Component {
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
 				<div className="footer-icons">
-					<a href="#"><i className="fa fa-facebook"></i></a>
-					<a href="#"><i className="fa fa-twitter"></i></a>
-					<a href="#"><i className="fa fa-linkedin"></i></a>
+					<a href="facebook.com"><i className="fa fa-facebook"></i></a>
+					<a href="twitter.com"><i className="fa fa-twitter"></i></a>
+					<a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
 				</div>
 			</div>
 		</footer>

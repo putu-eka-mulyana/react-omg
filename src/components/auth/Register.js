@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import classnames from "classnames";
 class Register extends Component {
     constructor() {
         super();
@@ -45,91 +44,84 @@ class Register extends Component {
     render() {
         const { errors } = this.state;
         return (
-            <Container>
-                <Row style={{ marginTop: "4rem" }}>
-                    <Col md={6} className="card" >
-                        <Link to="/" className="btn btn-light">
-                            <i class="fa fa-arrow-left"></i> Back to home
-                        </Link>
-                        <Card style={{ backgroundColor: "#dae1e7", height: "100%" }}>
-                        <div className="text-center user_login">
-                                <i class="fa fa-user-plus"></i>
-                            </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text" ><i class="fa fa-user-o"></i></span>
-                                </div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.name}
-                                    error={errors.name}
-                                    id="name"
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Name"
-                                />
-                            </div>
-                            <span className="red-text">{errors.name}</span>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i class="fa fa-envelope-o"></i></span>
-                                </div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.email}
-                                    error={errors.email}
-                                    id="email"
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="E-mail"
-                                />
-                            </div>
-                            <span className="red-text">{errors.email}</span>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i class="fa fa-key"></i></span>
-                                </div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password}
-                                    error={errors.password}
-                                    id="password"
-                                    type="password"
-                                    className="form-control"
-                                    placeholder="Password"
-                                />
-                            </div>
-                            <span className="red-text">{errors.password}</span>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i class="fa fa-key"></i></span>
-                                </div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password2}
-                                    error={errors.password2}
-                                    id="password2"
-                                    type="password"
-                                    placeholder="Confirm password"
-                                    className="form-control"
-                                />
-                            </div>
-                            <span className="red-text">{errors.password2}</span>
-                            <div className="text-center">
-                                <Button type="submit" variant="light">Login</Button>
-                            </div>
-                        </form>
-                        </Card>
-                    </Col>
-                    <Col sm={6} className="login_bg">
-                        <div className="icon_add text-center"><i class="fa fa-user-circle-o"></i></div>
-                        <div className="text-center" style={{ marginTop: "2rem" }} >
-                            <Link to="/login" className="btn btn-danger">SIGN IN</Link>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+            <div className="bg-login">
+                <Container className="py-5">
+                    <Row>
+                        <Col lg={12} md={12} sm={12}>
+                            <Row>
+                                <Col lg={5} md={7} sm={7} className="mx-auto">
+                                    <Card rounded-1 className="card-auth">
+                                        <Card.Header>
+                                            <h4 className="text-center">SIGN UP</h4>
+                                        </Card.Header>
+                                        <Card.Body>
+
+                                            <form noValidate onSubmit={this.onSubmit}>
+                                                <div className="form-group mb-3">
+                                                    <label>Name</label>
+                                                    <input
+                                                        onChange={this.onChange}
+                                                        value={this.state.name}
+                                                        error={errors.name}
+                                                        id="name"
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="Name"
+                                                    />
+                                                </div>
+                                                <span className="red-text">{errors.name}</span>
+                                                <div className="form-group mb-3">
+                                                    <label>E-mail</label>
+                                                    <input
+                                                        onChange={this.onChange}
+                                                        value={this.state.email}
+                                                        error={errors.email}
+                                                        id="email"
+                                                        type="email"
+                                                        className="form-control"
+                                                        placeholder="E-mail"
+                                                    />
+                                                </div>
+                                                <span className="red-text">{errors.email}</span>
+                                                <div className="form-group mb-3">
+                                                    <label>Password</label>
+                                                    <input
+                                                        onChange={this.onChange}
+                                                        value={this.state.password}
+                                                        error={errors.password}
+                                                        id="password"
+                                                        type="password"
+                                                        className="form-control"
+                                                        placeholder="Password"
+                                                    />
+                                                </div>
+                                                <span className="red-text">{errors.password}</span>
+                                                <div className="form-group mb-3">
+                                                    <label>Confirm Password</label>
+                                                    <input
+                                                        onChange={this.onChange}
+                                                        value={this.state.password2}
+                                                        error={errors.password2}
+                                                        id="password2"
+                                                        type="password"
+                                                        placeholder="Confirm password"
+                                                        className="form-control"
+                                                    />
+                                                </div>
+                                                <span className="red-text">{errors.password2}</span>
+                                                <div className="text-center">
+                                                    <Button type="submit" className="btn btn-success btn-lg btn-block">SIGN UP</Button>
+                                                </div>
+                                                <div className="py-3">already have an account? <Link to="/login">SIGN IN</Link></div>
+                                            </form>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 }

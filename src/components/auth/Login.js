@@ -51,7 +51,7 @@ class Login extends Component {
                             <Col lg={5} md={7} sm={7} className="mx-auto">
                                 <Card rounded-1 className="card-auth">
                                     <Card.Header>
-                                        <h4 className="text-center">FORM LOGIN</h4>
+                                        <h4 className="text-center">LOGIN</h4>
                                     </Card.Header>
                                     <Card.Body>
                                     <form noValidate onSubmit={this.onSubmit}>
@@ -88,7 +88,7 @@ class Login extends Component {
                                         <div className="text-center">
                                             <Button type="submit" className="btn btn-success btn-lg btn-block">Login</Button>
                                         </div>
-                                        <div className="py-3">Dont have an occount ?  <Link to="/register">SIGN UP</Link></div>
+                                        <div className="py-3">Dont have an account ?  <Link to="/register">SIGN UP</Link></div>
                                     </form>
                                     </Card.Body>
                                 </Card>
