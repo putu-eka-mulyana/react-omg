@@ -5,7 +5,7 @@ class Footer extends Component {
 			<footer className="footer-distributed">
 			<div className="footer-left">
 				<h3>OMG</h3>
-				<p className="footer-company-name">online market monitoring &copy; 2019</p>
+				<p className="footer-company-name">online market monitoring &copy; {new Date().getFullYear()}</p>
 			</div>
 			<div className="footer-center">
 				<div>
@@ -23,13 +23,13 @@ class Footer extends Component {
 			</div>
 			<div className="footer-right">
 				<p className="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					<span>Follow us</span>
 				</p>
 				<div className="footer-icons">
-					<a href="facebook.com"><i className="fa fa-facebook"></i></a>
-					<a href="twitter.com"><i className="fa fa-twitter"></i></a>
+					<a href="www.facebook.com" target="_blank"><i className="fa fa-facebook"></i></a>
+					<a href="www.twitter.com"><i className="fa fa-twitter"></i></a>
 					<a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
+					<a href="instagram.com"><i class="fa fa-instagram"></i></a>					
 				</div>
 			</div>
 		</footer>

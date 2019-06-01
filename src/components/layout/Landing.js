@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-import { Jumbotron, Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Jumbotron, Container, Row, Col, Card } from "react-bootstrap";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faChartLine } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +24,7 @@ class Landing extends Component {
 						<h1 className="m-900 text-center">SELAMAT DATANG PEJUANG</h1>
 						<h3 className="text-center">MUDA</h3>
 						<div className="text-center">
-							<Button variant="danger" className="b_bergabung">JOIN NOW</Button>
+							<Link className="btn btn-outline-primary" to="/register">JOIN NOW</Link>
 						</div>
 					</div>
 				</Jumbotron>
