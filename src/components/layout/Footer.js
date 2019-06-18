@@ -29,7 +29,7 @@ class Footer extends Component {
 					<a href="www.facebook.com" target="_blank"><i className="fa fa-facebook"></i></a>
 					<a href="www.twitter.com"><i className="fa fa-twitter"></i></a>
 					<a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
-					<a href="instagram.com"><i class="fa fa-instagram"></i></a>					
+					<a href="instagram.com"><i className="fa fa-instagram"></i></a>					
 				</div>
 			</div>
 		</footer>

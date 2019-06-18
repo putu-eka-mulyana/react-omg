@@ -41,8 +41,8 @@ class Landing extends Component {
 									<h5>APA MANFAATNYA YANG DIDAPATKAN ?</h5>
 									<ul className="fitur">
 										<li><i className="fa fa-crosshairs"></i> DAPATKAN TARGET YANG TEPAT</li>
-										<li><i class="fa fa-shopping-cart"></i> TINGKATKAN PENJUALAN SECARA MAKSIMAL</li>
-										<li><i class="fa fa-gift"></i> TINGKATKAN PENDAPATAN</li>
+										<li><i className="fa fa-shopping-cart"></i> TINGKATKAN PENJUALAN SECARA MAKSIMAL</li>
+										<li><i className="fa fa-gift"></i> TINGKATKAN PENDAPATAN</li>
 									</ul>
 								</div>
 							</Col>

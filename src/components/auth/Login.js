@@ -49,7 +49,7 @@ class Login extends Component {
                     <Col lg={12} md={12} sm={12}>
                         <Row>
                             <Col lg={5} md={7} sm={7} className="mx-auto">
-                                <Card rounded-1 className="card-auth">
+                                <Card  className="card-auth">
                                     <Card.Header>
                                         <h4 className="text-center">LOGIN</h4>
                                     </Card.Header>
