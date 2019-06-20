@@ -37,8 +37,6 @@ class NavbarComponent extends Component {
 							</Nav>
 						) : (
 							<Nav>
-						<Link className="nav-link" to="/">HOME</Link>
-						<Link className="nav-link" to="#about">ABOUT US</Link>
 						<Link className="btn btn-outline-primary" to="/login">Login</Link>
 						</Nav>
 						)}

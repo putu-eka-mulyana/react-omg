@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Container, Row, Col, Card } from "react-bootstrap";
+import PropTypes from "prop-types";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 // library.add(faChartLine);
 import 'font-awesome/css/font-awesome.min.css';
 import Footer from "./Footer";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions"
 
 class Landing extends Component {
 	constructor(props) {
@@ -14,6 +17,21 @@ class Landing extends Component {
 		this.state = {
 			about_image: "https://res-staging.cloudinary.com/omg-helo/image/upload/v1556082332/trand_t1prbm.jpg",
 			img_jumbo: "https://res-staging.cloudinary.com/omg-helo/video/upload/v1556094907/Money_qe1bcn.webm"
+		}
+	}
+	componentDidMount(){
+		if(this.props.auth.isAuthenticated){
+			this.props.history.push('/dashboard');
+		}
+	}
+	componentWillReceiveProps(nextProps){
+		if(nextProps.auth.isAuthenticated){
+			this.props.history.push("/dashboard");
+		}
+		if(nextProps.errors){
+			this.setState({
+				errors : nextProps.errors
+			});
 		}
 	}
 	render() {
@@ -87,4 +105,15 @@ class Landing extends Component {
 		)
 	}
 }
-export default Landing;
+Landing.propTypes={
+	auth : PropTypes.object.isRequired,
+	errors : PropTypes.object.isRequired
+}
+const mapStateTopProps= state => ({
+	auth: state.auth,
+	errors : state.errors
+})
+export default connect(
+	mapStateTopProps,
+	{loginUser}
+)(Landing);
