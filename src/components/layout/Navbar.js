@@ -13,10 +13,6 @@ class NavbarComponent extends Component {
 	render() {
 		const  {isAuthenticated}  = this.props.auth;
 		const  {user}  = this.props.auth;
-		console.log(isAuthenticated);
-		console.log(user);
-		
-		console.log(this.props.auth);
 		return (
 			<div>
 			<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

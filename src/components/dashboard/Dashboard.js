@@ -3,14 +3,17 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import axios from "axios";
-import { Container,Row } from "react-bootstrap";
+import { Container,Row,Form,Col } from "react-bootstrap";
+import FilterResults from 'react-filter-search';
 import Item from "./Item";
 
 class Dashboard extends Component {
     constructor(props){
         super(props);
         this.state={
-            data:[]
+            data:[],
+            dataKategory:[],
+            filter:''
         }
     } 
     onLogoutClick = e => {
@@ -22,22 +25,37 @@ class Dashboard extends Component {
         axios.get(url)
             .then(res =>{
                 const data=res.data.store
+                data.sort((a,b)=>b.persentease - a.persentease)
                 this.setState({data})
-                console.log(data)
-            })     
+                data.map(item => this.setState({dataKategory: [...this.state.dataKategory,item.kategori]}))
+            });
+    }
+    onChange=(e)=>{
+        this.setState({filter:e.target.value})
     }
     render() {
-        // const conttrollItems=this.state.data.map(item => 
-        //     <BuildControl key={item.id} label={item.kategori} />);
+        const dataFilter = Array.from(new Set(this.state.dataKategory));
         return (
             <div style={{backgroundColor:'#e1e4e8'}}>
             <Container>
                 <div style={{paddingBottom: '20px'}}></div>
                 <h1 className="card">Daftar Produk Yang Sedang Tren</h1>
+                <Form.Group as={Col} controlId="formGridState">
+                <Form.Label>Filter Data</Form.Label>
+                <Form.Control as="select" onChange={this.onChange}>
+                    <option value="">Pilih Semua</option>
+                    {dataFilter.map((item,i)=> <option key={i} value={item}>{item}</option> )}>
+                </Form.Control>
+                </Form.Group>
                 <Row>
-                {
-                    this.state.data.map(item=><Item key={item.id} name={item.name} persentease={item.persentease} img={item.img} price={item.price} kategori={item.kategori} link={item.link}/>)
-                }
+                <FilterResults
+                 value={this.state.filter}
+                 data={this.state.data}
+                 renderResults={results=>(
+                    results.map(item=><Item key={item.id} name={item.name} persentease={item.persentease} img={item.img} price={item.price} kategori={item.kategori} link={item.link}/>)
+                 )}
+                 />
+                
                 </Row>
             </Container>
             </div>
