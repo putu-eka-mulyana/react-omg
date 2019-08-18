@@ -21,7 +21,7 @@ class Dashboard extends Component {
         this.props.logoutUser();
     };
     componentDidMount(){
-        const url="http://127.0.0.1:5000/api/store";
+        const url="http://0.0.0.0:5000/api/store";
         axios.get(url)
             .then(res =>{
                 const data=res.data.store
