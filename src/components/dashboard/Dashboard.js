@@ -7,6 +7,8 @@ import { Container,Row,Form,Col } from "react-bootstrap";
 import FilterResults from 'react-filter-search';
 import Item from "./Item";
 
+const root_server = 'http://34.67.178.45:5000'
+
 class Dashboard extends Component {
     constructor(props){
         super(props);
@@ -21,7 +23,7 @@ class Dashboard extends Component {
         this.props.logoutUser();
     };
     componentDidMount(){
-        const url="http://0.0.0.0:5000/api/store";
+        const url=`${root_server}/api/store`;
         axios.get(url)
             .then(res =>{
                 const data=res.data.store

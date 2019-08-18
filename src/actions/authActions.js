@@ -8,9 +8,13 @@ import {
 } from "./types";
 // import { decode } from "querystring";
 // Register User
+
+const root_server = 'http://34.67.178.45:5000';
+
+
 export const registerUser = (userData, history) => dispatch => {
   axios
-    .post("http://0.0.0.0:5000/api/users/register", userData)
+    .post(`${root_server}/api/users/register`, userData)
     .then(res => history.push("/login")) // re-direct to login on successful register
     .catch(err =>
       dispatch({
@@ -22,7 +26,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-    .post("http://0.0.0.0:5000/api/users/login", userData)
+    .post(`${root_server}/api/users/login`, userData)
     .then(res => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
